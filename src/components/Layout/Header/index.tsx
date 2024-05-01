@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logoTravello from "../../../../public/assets/travelo-logo-header.png";
+import Button from "../../Button";
 import Container from "../../Container";
 import Search from "./Search";
 import Nav from "./Nav";
@@ -19,8 +20,9 @@ export default function Header() {
             />
             <Search />
           </div>
-          <div className="flex">
+          <div className="flex gap-5">
             <Nav />
+            <Button className="w-[190px]">Masuk</Button>
           </div>
         </div>
       </Container>

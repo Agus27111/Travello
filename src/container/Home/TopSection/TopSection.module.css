@@ -1,5 +1,6 @@
 .section {
   height: 764px;
+  margin-top: 85px;
   background-image: url(../../../../public/assets/home/header.png);
   background-repeat: no-repeat;
   background-position: right top;

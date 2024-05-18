@@ -7,7 +7,7 @@ import Nav from "./Nav";
 
 export default function Header() {
   return (
-    <header className="h-[85px] bg-white shadow-xl p-4">
+    <header className="h-[85px] bg-white shadow-xl p-4 fixed top-0 left-0 right-0 z-20">
       <Container>
         <div className="flex justify-between items-center">
           <div className="flex">

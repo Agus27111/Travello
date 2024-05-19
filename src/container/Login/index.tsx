@@ -1,8 +1,9 @@
 import React from "react";
 import Layout from "@/src/components/Layout";
 import Button from "@/src/components/Button";
+import Input from "@/src/components/Input";
 import styles from "./Login.module.css";
-function Login() {
+const Login = () => {
   return (
     <Layout noFooter>
       <div className={styles.section}>
@@ -13,21 +14,38 @@ function Login() {
               Belum punya akun?
             </p>
             <a
-              href="#"
+              href="/src/container/Login"
               className="text-heading-5 text-blue-100 font-semibold ml-2 hover:underline"
             >
               Daftar disini
             </a>
           </div>
           <form className="flex flex-col mt-8">
-            <input type="email"></input>
-            <input type="password"></input>
+            <Input
+              label="Email"
+              type="email"
+              name="email"
+              placeholder="Masukkan alamat email"
+              className="mb-6"
+            />
+            <Input
+              label="Kata sandi"
+              type="password"
+              name="password"
+              placeholder="Masukkan kata sandi"
+            />
+            <a
+              href="/src/container/Home"
+              className="text-heading-5 text-blue-100 font-semibold ml-2 hover:underline"
+            >
+              Lupa kata sandi?
+            </a>
             <Button> Masuk </Button>
           </form>
         </div>
       </div>
     </Layout>
   );
-}
+};
 
 export default Login;

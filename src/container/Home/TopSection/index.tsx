@@ -17,7 +17,7 @@ function TopSection() {
               di Travel kamu akan dapatkan pelayanan terbaik untuk wisata
               liburan kapan saja dan dimana saja
             </p>
-            <Button>Lihat Paket</Button>
+            <Button className="w-[190px]">Lihat Paket</Button>
           </div>
           <div className="flex gap-40 mx-auto">
             <InfoItem label="+30" subLabel="Negara" />

@@ -2,8 +2,13 @@ import React from "react";
 import Layout from "@/src/components/Layout";
 import Button from "@/src/components/Button";
 import Input from "@/src/components/Input";
+import { useComponentLogic } from "./hooks";
 import styles from "./Login.module.css";
+import { REG_EXP } from "@/src/constants/regexp";
 const Login = () => {
+  const { register, handleSubmit, onSubmit, errors } =
+    useComponentLogic();
+
   return (
     <Layout noFooter>
       <div className={styles.section}>
@@ -20,8 +25,18 @@ const Login = () => {
               Daftar disini
             </a>
           </div>
-          <form className="flex flex-col mt-8">
+          <form
+            className="flex flex-col mt-8"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <Input
+              register={register}
+              errors={errors}
+              required={{ value: true, message: "Alamat email harus di isi." }}
+              pattern={{
+                value: REG_EXP.email,
+                message: "Gunakan format email dengan benar",
+              }}
               label="Email"
               type="email"
               name="email"
@@ -29,6 +44,9 @@ const Login = () => {
               className="mb-6"
             />
             <Input
+              register={register}
+              errors={errors}
+              required={{ value: true, message: "Password harus di isi." }}
               label="Kata sandi"
               type="password"
               name="password"
